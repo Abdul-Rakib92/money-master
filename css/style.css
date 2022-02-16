@@ -1,0 +1,17 @@
+
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Fira+Sans:ital@1&family=Lobster&family=Montserrat&family=Playball&family=Poppins:wght@500&family=Roboto:wght@500;700&family=Satisfy&display=swap');
+
+/* common utility */
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: bisque;
+}
+
+/* customization section */
+.expense-money img{
+    height: 100vh;
+}
+.input-size{
+    
+}
