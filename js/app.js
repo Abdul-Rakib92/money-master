@@ -15,12 +15,12 @@ document.getElementById('calculate-button').addEventListener('click', function()
 
     const incomeAmount = getInputValue('income-input');
 
-    // update balance
+    // update expenses
     const foodExpense = document.getElementById('food');
     const rentExpense = document.getElementById('rent');
     const clothExpense = document.getElementById('clothes');
 
-    // update toall expenses
+    // update total expenses
     const totalExpenses = document.getElementById('total-expenses');
     totalExpenses.innerText = parseFloat(foodExpense.value) + parseFloat(rentExpense.value) + parseFloat(clothExpense.value);
 
@@ -45,11 +45,8 @@ document.getElementById('save-button').addEventListener('click', function(){
     
     //update balance
     const balanceInput = document.getElementById('balance-total');
-    
     const balanceAmountText = balanceInput.innerText;
-    const balance = parseFloat(balanceAmountText);
-
-   
+    const balance = parseFloat(balanceAmountText); 
 
     // update remaining balance
     const totalSaving = balance / 100 * saveAmount;
