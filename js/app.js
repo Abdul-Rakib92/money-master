@@ -6,8 +6,14 @@ document.getElementById('calculate-button').addEventListener('click', function()
     const incomeAmount = parseFloat(incomeAmountText);
 
     // update balance
-    const balanceTotal = document.getElementById('balance-total');
-    const balanceTotalText = balanceTotal.innerText;
-    const previousBalanceTotal = parseFloat(balanceTotalText);
-    balanceTotal.innerText = previousBalanceTotal + incomeAmount;
-})
+    const foodExpense = document.getElementById('food');
+    const rentExpense = document.getElementById('rent');
+    const clothExpense = document.getElementById('clothes');
+
+    // update toall expenses
+    const totalExpenses = document.getElementById('total-expenses');
+    totalExpenses.innerText = parseFloat(foodExpense.value) + parseFloat(rentExpense.value) + parseFloat(clothExpense.value);;
+
+    // update balance
+    document.getElementById('balance-total').innerText = incomeAmount - totalExpenses.innerText;
+});
