@@ -16,75 +16,83 @@
 
 <body>
 
-    <section>
-        <div class="container my-4">
-            <h1 class="my-4 text-center">My Monthly Expenses </h1>
-            <div class="expense-money">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <img class="img-fluid" src="image/money.jpg" alt="">
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div >
-                            <h3 class="text-center my-4">Income</h3>
-                            <div class="input-group flex-nowrap w-75 mx-auto">
-                                <span class="input-group-text" id="addon-wrapping">Income</span>
-                                <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
-                            </div>
+    <header>
+
+    </header>
+    <!-- code start -->
+    <main>
+        <section>
+            <div class="container my-4">
+                <h1 class="my-4 text-center">My Monthly Expenses </h1>
+                <div class="expense-money">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <img class="img-fluid" src="image/money.jpg" alt="">
                         </div>
+                        <div class="col-sm-12 col-md-6">
 
-                        <div >
-                            <h3 class="text-center my-4">Expenses</h3>
-                            <div class="input-group flex-nowrap w-75 mx-auto mb-3">
-                                <span class="input-group-text" id="addon-wrapping">Food</span>
-                                <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
+                            <!-- Income -->
+                            <div >
+                                <h3 class="text-center my-4">Income</h3>
+                                <div class="input-group flex-nowrap w-75 mx-auto">
+                                    <span class="input-group-text" id="addon-wrapping">Income</span>
+                                    <input id="income-input" type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
+                                </div>
                             </div>
-
-                            <div class="input-group flex-nowrap w-75 mx-auto mb-3">
-                                <span class="input-group-text" id="addon-wrapping">Rent</span>
-                                <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
-                            </div>
-
-                            <div class="input-group flex-nowrap w-75 mx-auto mb-3">
-                                <span class="input-group-text" id="addon-wrapping">Clothes</span>
-                                <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
-                            </div>
-                        </div >
-                            
-                        <div class="d-flex justify-content-center align-items-center">
-                            <button type="button" class="btn btn-primary py-2 px-5 fs-5">Calculate</button>
-                        </div>
-
-                        <div>
-                            <h3 class="text-center my-4">Total Expenses: <span id="total-expenses"></span> </h3>
-
-                            <h3 class="text-center my-4">Balance: <span id="balance"></span> </h3>
-                        </div>
-
-                        <div class="input-group flex-nowrap w-75 mx-auto mb-3">
-                            <span class="input-group-text" id="addon-wrapping">Save</span>
-                            <input type="text" class="form-control w-75" aria-label="Amount" aria-describedby="addon-wrapping">
-                            
-                            <p class="fs-3 px-3">%</p>
-
+                                <!-- Expenses -->
+                            <div >
+                                <h3 class="text-center my-4">Expenses</h3>
+                                <div class="input-group flex-nowrap w-75 mx-auto mb-3">
+                                    <span class="input-group-text" id="addon-wrapping">Food</span>
+                                    <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
+                                </div>
+    
+                                <div class="input-group flex-nowrap w-75 mx-auto mb-3">
+                                    <span class="input-group-text" id="addon-wrapping">Rent</span>
+                                    <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
+                                </div>
+    
+                                <div class="input-group flex-nowrap w-75 mx-auto mb-3">
+                                    <span class="input-group-text" id="addon-wrapping">Clothes</span>
+                                    <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
+                                </div>
+                            </div >
+                                <!-- calculate -->
                             <div class="d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary py-3 px-3 fs-5">Calculate</button>
+                                <button id="calculate-button" type="button" class="btn btn-primary py-2 px-5 fs-5">Calculate</button>
                             </div>
-
+                                <!--Total Expenses & balance -->
+                            <div>
+                                <h3 class="text-center my-4">Total Expenses: <span id="total-expenses"></span> </h3>
+    
+                                <h3 class="text-center my-4">Balance: <span id="balance-total"></span> </h3>
+                            </div>
+                                <!-- save -->
+                            <div class="input-group flex-nowrap w-75 mx-auto mb-3">
+                                <span class="input-group-text" id="addon-wrapping">Save</span>
+                                <input type="text" class="form-control text-center" aria-label="Amount" aria-describedby="addon-wrapping">
+                                
+                                <p class="fs-2 px-3 d-flex align-items-center justify-content-center">%</p>
+    
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button type="button" class="btn btn-primary py-3 px-3 fs-5">Save</button>
+                                </div>
+    
+                            </div>
+                                <!-- remaining balance -->
+                            <div>
+                                <h3 class="text-center my-4">Saving Amount: <span id="saving-amount"></span> </h3>
+    
+                                <h3 class="text-center my-4">Remaining Balance: <span id="remaining-balance"></span> </h3>
+                            </div>
                         </div>
-
-                        <div>
-                            <h3 class="text-center my-4">Saving Amount: <span id="saving-amount"></span> </h3>
-
-                            <h3 class="text-center my-4">Remaining Balance: <span id="remaining-balance"></span> </h3>
-                        </div>
+    
                     </div>
-
                 </div>
+    
             </div>
-
-        </div>
-    </section>
+        </section>
+    </main>
 
 
     <script src="js/app.js"></script>
