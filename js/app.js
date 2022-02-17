@@ -22,10 +22,15 @@ document.getElementById('calculate-button').addEventListener('click', function()
 
     // update toall expenses
     const totalExpenses = document.getElementById('total-expenses');
-    totalExpenses.innerText = parseFloat(foodExpense.value) + parseFloat(rentExpense.value) + parseFloat(clothExpense.value);;
+    totalExpenses.innerText = parseFloat(foodExpense.value) + parseFloat(rentExpense.value) + parseFloat(clothExpense.value);
 
     // update balance
     const balanceTotal = document.getElementById('balance-total').innerText = incomeAmount - totalExpenses.innerText;
+
+    if (incomeAmount < 0 ){
+        alert('Please input positive number')
+    }
+    
 });
 
 
@@ -40,14 +45,21 @@ document.getElementById('save-button').addEventListener('click', function(){
     
     //update balance
     const balanceInput = document.getElementById('balance-total');
+    
     const balanceAmountText = balanceInput.innerText;
     const balance = parseFloat(balanceAmountText);
+
+   
 
     // update remaining balance
     const totalSaving = balance / 100 * saveAmount;
     const remainingBalance = balance - totalSaving;
 
-    const savingAmount = document.getElementById('saving-amount').innerText = totalSaving;
+    if (saveAmount < 0 ){
+        alert('Please input positive number')
+    }
+
+    document.getElementById('saving-amount').innerText = totalSaving;
     document.getElementById('remaining-balance').innerText = remainingBalance;
 
 })
