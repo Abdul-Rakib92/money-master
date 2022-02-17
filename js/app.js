@@ -1,10 +1,19 @@
+function getInputValue(inputId) {
+    const InputField = document.getElementById(inputId);
+    const inputAmountText = InputField.value;
+    const amountValue = parseFloat(inputAmountText);
+
+    return amountValue;
+}
+
+
 // handle calculate button event
-
-
 document.getElementById('calculate-button').addEventListener('click', function(){
-    const incomeInput = document.getElementById('income-input');
+    /* const incomeInput = document.getElementById('income-input');
     const incomeAmountText = incomeInput.value;
-    const incomeAmount = parseFloat(incomeAmountText);
+    const incomeAmount = parseFloat(incomeAmountText); */
+
+    const incomeAmount = getInputValue('income-input');
 
     // update balance
     const foodExpense = document.getElementById('food');
@@ -18,46 +27,27 @@ document.getElementById('calculate-button').addEventListener('click', function()
     // update balance
     const balanceTotal = document.getElementById('balance-total').innerText = incomeAmount - totalExpenses.innerText;
 });
-// function percent(num1, num2) {
-//     const result = num1 /100 * num2;
-//     return result;
-// }
+
 
 document.getElementById('save-button').addEventListener('click', function(){
-    const saveInput = document.getElementById('save-input');
-    const saveTotalText = saveInput.value;
-    const saveTotal = parseFloat(saveTotalText);
+    //update saving
 
-    const balanceTotal = document.getElementById('balance-total');
-    const balanceAmountText = balanceTotal.innerText;
+    /* const saveInput = document.getElementById('save-input');
+    const saveAmountText = saveInput.value;
+    const saveAmount = parseFloat(saveAmountText); */
+
+    const saveAmount = getInputValue('save-input')
+    
+    //update balance
+    const balanceInput = document.getElementById('balance-total');
+    const balanceAmountText = balanceInput.innerText;
     const balance = parseFloat(balanceAmountText);
 
-
-
-    // const save = percent(balance * saveTotal);
-
-
-    // update saving amount
-    /* const savingAmount = document.getElementById('saving-amount');
-    const savingAmountText = savingAmount.innerText;
-    const saving = parseFloat(savingAmountText); */
-    const totalSaving = balance / 100 * saveTotal;
+    // update remaining balance
+    const totalSaving = balance / 100 * saveAmount;
     const remainingBalance = balance - totalSaving;
 
-
-    // update remaining balance
     const savingAmount = document.getElementById('saving-amount').innerText = totalSaving;
     document.getElementById('remaining-balance').innerText = remainingBalance;
-
-
-    // const save = parseFloat(savingAmountText);
-    // savingAmount.innerText = parseFloat()
-
-    
-    // const save = balanceTotal * 0.2;
-
-    // savingAmount.innerText = save - saveTotal;
-
-    // console.log('fas',  );
 
 })
